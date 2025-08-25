@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct StatusAnimationItems: View {
-    let manager = GameManager.shared
+    @State private var manager = GameManager.shared
 
     var body: some View {
         ZStack {

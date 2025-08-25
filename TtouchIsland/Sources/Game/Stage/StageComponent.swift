@@ -7,6 +7,7 @@
 //
 
 import RealityKit
+import SwiftUI
 
 struct StageComponent: Component {
     enum StageType {
@@ -32,7 +33,7 @@ struct StageComponent: Component {
 }
 
 struct StageSystem: System {
-    var manager = GameManager.shared
+    @State private var manager = GameManager.shared
 
     init(scene _: RealityKit.Scene) {}
 

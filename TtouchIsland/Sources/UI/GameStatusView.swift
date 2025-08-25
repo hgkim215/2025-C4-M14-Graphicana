@@ -10,7 +10,7 @@ import Lottie
 import SwiftUI
 
 struct GameStatusView: View {
-    let manager: GameManager = .shared
+    @State private var manager = GameManager.shared
 
     var body: some View {
         ZStack(alignment: .topLeading) {

@@ -30,8 +30,10 @@ class GameManager {
     func setCharacterRunning(to boolean: Bool) {
         guard let character = character else { return }
 
-        character.components[CharacterStateComponent.self]?.isOnRunning = boolean
-        character.components[CharacterMovementComponent.self]?.isOnRunning = boolean
+        character.components[CharacterStateComponent.self]?.isOnRunning =
+            boolean
+        character.components[CharacterMovementComponent.self]?.isOnRunning =
+            boolean
     }
 
     var showOnboarding: Bool = true
@@ -42,11 +44,8 @@ class GameManager {
     // MARK: - 아이템 상태 변수
 
     var visibleItems: [StatusItem] = []
-
     var runButtonEnabled = false
-
     var nearItem: Entity?
-
     var isFocusedOnItem = false
 
     // MARK: - 카메라 시점 이동
@@ -54,7 +53,6 @@ class GameManager {
     var savedCameraState: WorldCameraComponent?
 
     var isGameFinished = false
-    let isPortrait = true
     var levelFinished = false
 
     var metalDevice: MTLDevice? = MTLCreateSystemDefaultDevice()
@@ -85,7 +83,7 @@ extension GameManager {
                     solidImageName: "Backpack",
                     outlinedImageName: "Backpack_Outline",
                     isSolid: false
-                ),
+                )
             ]
         } else {
             print("⚠️ Warning: Backpack is already available.")

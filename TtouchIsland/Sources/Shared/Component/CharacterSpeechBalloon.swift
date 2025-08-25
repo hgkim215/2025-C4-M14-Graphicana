@@ -12,7 +12,7 @@ import SwiftUI
 struct CharacterSpeechBalloon: View {
     let file: String
 
-    let manager = GameManager.shared
+    @State private var manager = GameManager.shared
 
     var body: some View {
         LottieView(animation: .named(file))
