@@ -13,7 +13,7 @@ import SwiftUI
 import WorldCamera
 
 struct ItemSystem: System {
-    @State var manager = GameManager.shared
+    @State private var manager = GameManager.shared
 
     init(scene _: RealityKit.Scene) {}
 
@@ -72,7 +72,7 @@ struct ItemSystem: System {
     // endPint에서 모든 아이템을 수집했는지 확인
     func checkItemAtEndPoint(context: SceneUpdateContext) {
         guard let character = manager.gameRoot?.findEntity(named: "Ttouch"),
-            let endPoint = manager.gameRoot?.findEntity(named: "Leaf")
+              let endPoint = manager.gameRoot?.findEntity(named: "Leaf")
         else { return }
 
         // 1. 캐릭터와 아이템 사이 거리 계산
@@ -125,13 +125,13 @@ struct ItemSystem: System {
 
     func playMapEndingAnimation() {
         guard let ocean = manager.gameRoot?.findEntity(named: "OceanPlane"),
-            let character = manager.gameRoot?.findEntity(named: "Ttouch")
+              let character = manager.gameRoot?.findEntity(named: "Ttouch")
         else { return }
 
         // 땃쥐 멈춰
         if var movementComponent = character.components[
             CharacterMovementComponent.self
-        ]  //            var stateComponent = character.components[
+        ] //            var stateComponent = character.components[
         //                CharacterStateComponent.self
         //            ]
         {
@@ -140,7 +140,7 @@ struct ItemSystem: System {
             //            stateComponent.currentState = .idle
             //            character.components.set(stateComponent)
         }
-      
+
         manager.showInterface = false
 
         // 땃쥐 y좌표 가져오기
@@ -164,7 +164,7 @@ struct ItemSystem: System {
 
     func playZoomOutOceanAnimation() {
         guard let character = manager.gameRoot?.findEntity(named: "Ttouch"),
-            let camera = manager.gameRoot?.findEntity(named: "camera")
+              let camera = manager.gameRoot?.findEntity(named: "camera")
         else { return }
 
         // 카메라 줌아웃하는 액션 생성

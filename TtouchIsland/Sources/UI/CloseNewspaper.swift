@@ -10,7 +10,8 @@ import RealityKit
 import SwiftUI
 
 struct CloseNewspaperComponent: View {
-    let manager = GameManager.shared
+    @State private var manager = GameManager.shared
+    
     let itemAction: (Entity, Entity) -> Void
 
     var body: some View {

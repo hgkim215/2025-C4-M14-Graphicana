@@ -13,7 +13,7 @@ struct StatusAnimationIcon: View {
     let file: String
     let isLoop: Bool
 
-    let manager = GameManager.shared
+    @State private var manager = GameManager.shared
 
     var body: some View {
         LottieView(animation: .named(file))

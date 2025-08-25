@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var manager = GameManager.shared
+    @State private var manager = GameManager.shared
 
     var body: some View {
         // ZStack으로 한 이유: GameView가 처음부터 생성되지 않으면 RealityKit 초기화가 아예 실행되지 않는 문제가 있어서

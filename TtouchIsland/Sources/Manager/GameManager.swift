@@ -42,11 +42,8 @@ class GameManager {
     // MARK: - 아이템 상태 변수
 
     var visibleItems: [StatusItem] = []
-
     var runButtonEnabled = false
-
     var nearItem: Entity?
-
     var isFocusedOnItem = false
 
     // MARK: - 카메라 시점 이동
@@ -54,7 +51,6 @@ class GameManager {
     var savedCameraState: WorldCameraComponent?
 
     var isGameFinished = false
-    let isPortrait = true
     var levelFinished = false
 
     var metalDevice: MTLDevice? = MTLCreateSystemDefaultDevice()

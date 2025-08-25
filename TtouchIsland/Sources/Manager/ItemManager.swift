@@ -9,10 +9,11 @@
 import CharacterMovement
 import Foundation
 import RealityKit
+import SwiftUI
 import WorldCamera
 
 struct ItemManager {
-    let manager = GameManager.shared
+    @State private var manager = GameManager.shared
 
     /// 신문을 클로즈업하는 함수
     func closeupNewspaper(newspaper: Entity, camera: Entity) throws {
